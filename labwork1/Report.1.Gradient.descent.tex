@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+\title{Labwork 1: Gradient Descent Report}
+\author{Le Quoc Trung 2540103}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This report presents an implementation of gradient descent from scratch to minimize the function:
+\[
+f(x) = x^2
+\]
+
+The derivative is:
+\[
+f'(x) = 2x
+\]
+
+\section{Algorithm}
+The update rule used is:
+\[
+x = x_A - r \cdot f'(x_A) = x - 2rx_A
+\]
+
+where $r$ is the learning rate.
+
+\section{Implementation}
+The algorithm is implemented in Python without using any libraries. The process iteratively updates $x$ until convergence or until a maximum number of iterations are reached.
+
+\section{Iteration Table Example}
+
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Iteration & x & f(x) \\
+\midrule
+0 & 5.0 & 25.0 \\
+1 & 4.0 & 16.0 \\
+2 & 3.2 & 10.24 \\
+3 & 2.56 & 6.553 \\
+4 &2.048000	& 4.194304 \\
+5 &1.638400	 &2.684355 \\
+6& 1.310720	& 1.717987\\
+7& 1.048576	& 1.099512\\
+8& 0.838861	& 0.703687\\
+9& 0.671089	& 0.450360\\
+10& 0.536871& 0.288230\\
+11& 0.429497& 0.184467\\
+12& 0.343597& 0.118059\\
+13& 0.274878& 0.075558\\
+14& 0.219902& 0.048357\\
+15& 0.175922& 0.030949\\
+16& 0.140737& 0.019807\\
+17& 0.112590& 0.012677\\
+18& 0.090072& 0.008113\\
+19& 0.072058& 0.005192\\
+20 &0.057646 & 0.003323\\
+...& ....... & ........ \\
+62& 0.000005&	 0.000000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Effect of Learning Rate}
+
+\subsection{Small Learning Rate}
+Convergence is slow but stable.(lr=0.05-126 epochs)
+
+\subsection{Moderate Learning Rate}
+Faster and more stable convergence. (lr=0.1-63 epochs)
+
+\subsection{Large Learning Rate}
+Fastest but may cause oscillation or divergence.(lr=0.5-2 epochs)
+
+\section{Conclusion}
+Gradient descent successfully converges to the minimum at $x = 0.000004$.
+
+\end{document}
